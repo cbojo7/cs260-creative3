@@ -20,9 +20,9 @@ angular.module('RPS', ['ui.router'])
     .factory('gameFactory', [function() {
         var o = {
             games: [
-                {name:rock,imgUrl:'rock.png'},
-                {name:paper,imgUrl:'paper.png'},
-                {name:scissors,imgUrl:'scissors.png'}
+                {name:rock,imgUrl:'images/rock.png',hand:'images/rockHand.png'},
+                {name:paper,imgUrl:'images/paper.png',hand:'images/paperHand.png'},
+                {name:scissors,imgUrl:'images/scissors.png',hand:'images/scissorsHand.png'}
             ]
         };
         return o;
