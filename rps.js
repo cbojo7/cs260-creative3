@@ -9,41 +9,34 @@ angular.module('RPS', ['ui.router'])
             templateUrl: '/home.html',
             controller: 'MainCtrl'
             })
-            .state('game', {
+            /*.state('game', {
             url: '/game',
             templateUrl: '/game.html',
             controller: 'GameCtrl'
-            });
+            })*/;
 
         $urlRouterProvider.otherwise('home');
     }])
     .factory('gameFactory', [function() {
         var o = {
             games: [
-                {name:rock,imgUrl:'images/rock.png',hand:'images/rockHand.png'},
-                {name:paper,imgUrl:'images/paper.png',hand:'images/paperHand.png'},
-                {name:scissors,imgUrl:'images/scissors.png',hand:'images/scissorsHand.png'}
+                {name:'rock',imgUrl:'images/rock.png',hand:'images/rockHand.png'},
+                {name:'paper',imgUrl:'images/paper.png',hand:'images/paperHand.png'},
+                {name:'scissors',imgUrl:'images/scissors.png',hand:'images/scissorsHand.png'}
             ]
         };
         return o;
     }])
     .controller('MainCtrl', [
-        'scope',
+        '$scope',
         'gameFactory',
         function($scope, gameFactory){
             $scope.games = gameFactory.games;
-            $scope.addScore = function() {
-
-            }
-
-            $scope.incrementScore = function(game) {
-                score.increment += 1;
-            }
         }
     ])
-    .controller('GameCtrl', [
-        $scope,
+    /*.controller('GameCtrl', [
+        '$scope',
         '$stateParams',
         'gameFactory',
 
-    ])
+    ])*/
