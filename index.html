@@ -9,26 +9,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body ng-app="RPS">
-    <div class="row">
-        <div class="col-md-6">
-            <ui-view></ui-view>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ui-view></ui-view>
+            </div>
         </div>
     </div>
+    
     <script type="text/ng-template" id="/home.html">
         <div class="page-header">
-            <img src="Icon.png"><h1>RPG Hero</h1>
+            <img src="images/Icon.png"><h1>RPG Hero</h1>
         </div>
 
         <div class="container">
             <div class="row selectionBox">
                 <div class="col-md-4">
-                    <a href="#!/games/1"><img src="rock.png"></a>
+                    <a href="#!/games/1"><img src="images/rock.png"></a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#!/games/2"><img src="paper.png"></a>
+                    <a href="#!/games/2"><img src="images/paper.png"></a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#!/games/3"><img src="scissors.png"></a>
+                    <a href="#!/games/3"><img src="images/scissors.png"></a>
                 </div>
             </div>
         </div>
