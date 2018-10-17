@@ -16,7 +16,7 @@ angular.module('RPS', ['ui.router'])
             });
 
         $urlRouterProvider.otherwise('home');
-    }]) 
+    }])
     .factory('gameFactory', [function() {
         var o = {
             games: [
