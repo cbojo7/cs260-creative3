@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>RPS Hero</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
     <script src="rps.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -24,20 +24,12 @@
 
         <div class="container">
             <div class="row selectionBox">
-                <div class="col-md-4">
-                    <a href="#!/games/1"><img src="images/rock.png"></a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#!/games/2"><img src="images/paper.png"></a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#!/games/3"><img src="images/scissors.png"></a>
+                <div class="col-md-4" ng-repeat="game in games">
+                    <a href="#!/games/{{games.indexOf(game)}}"><img ng-src="{{game.imgUrl}}"></a>
                 </div>
             </div>
         </div>
     </script>
-
-
 
 </body>
 </html>
