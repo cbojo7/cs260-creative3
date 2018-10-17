@@ -24,7 +24,7 @@ angular.module('RPS', ['ui.router'])
                 {name:paper,imgUrl:'images/paper.png',hand:'images/paperHand.png'},
                 {name:scissors,imgUrl:'images/scissors.png',hand:'images/scissorsHand.png'}
             ]
-        }; 
+        };
         return o;
     }])
     .controller('MainCtrl', [
