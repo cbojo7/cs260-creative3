@@ -10,7 +10,7 @@ angular.module('RPS', ['ui.router'])
             controller: 'MainCtrl'
             })
             .state('game', {
-            url: '/game/{id}',
+            url: '/game',
             templateUrl: '/game.html',
             controller: 'GameCtrl'
             });
@@ -19,7 +19,11 @@ angular.module('RPS', ['ui.router'])
     }]) 
     .factory('gameFactory', [function() {
         var o = {
-            posts: []
+            games: [
+                {name:rock,imgUrl:'rock.png'},
+                {name:paper,imgUrl:'paper.png'},
+                {name:scissors,imgUrl:'scissors.png'}
+            ]
         };
         return o;
     }])
@@ -28,7 +32,6 @@ angular.module('RPS', ['ui.router'])
         'gameFactory',
         function($scope, gameFactory){
             $scope.games = gameFactory.games;
-
             $scope.addScore = function() {
 
             }
