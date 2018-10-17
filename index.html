@@ -12,24 +12,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="page-header">
+                    <img src="images/Icon.png"><h1>RPS Hero</h1>
+                </div>
                 <ui-view></ui-view>
             </div>
         </div>
     </div>
     
     <script type="text/ng-template" id="/home.html">
-        <div class="page-header">
-            <img src="images/Icon.png"><h1>RPG Hero</h1>
-        </div>
-
         <div class="container">
+            <h2>Select move:</h2>
             <div class="row selectionBox">
-                <div class="col-md-4" ng-repeat="game in games">
+                <div class="col-md-4 centered-text" ng-repeat="game in games">
                     <a href="#!/games/{{games.indexOf(game)}}"><img ng-src="{{game.imgUrl}}"></a>
                 </div>
             </div>
         </div>
     </script>
 
+    <script type="text/ng-template" id="/game.html">
+        <div class="container">
+            <div class="row gameBox">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+    </script>
 </body>
 </html>

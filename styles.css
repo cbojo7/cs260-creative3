@@ -1,4 +1,9 @@
 .selectionBox {
     border: solid black 3px;
     border-radius: 5px;
+    height: 250px;
+}
+
+.gameBox {
+    height: 700px;
 }
