@@ -55,7 +55,7 @@ angular.module('RPS', ['ui.router'])
             $scope.result = findWinner($scope.game.id,$scope.computer.pick);
             if ($scope.result == 'Player Lose') {
                 $scope.player.losses++;
-            } else if ($scope.result == 'Player Wins!') {
+            } else if ($scope.result == 'Player Win!') {
                 $scope.player.wins++;
             }
         }
