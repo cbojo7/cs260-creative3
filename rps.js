@@ -9,7 +9,7 @@ angular.module('RPS', ['ui.router'])
             templateUrl: '/home.html',
             controller: 'MainCtrl'
             })
-            .state('game', {
+            .state('game/{id}', {
             url: '/game',
             templateUrl: '/game.html',
             controller: 'GameCtrl'
@@ -27,25 +27,65 @@ angular.module('RPS', ['ui.router'])
         };
         return o;
     }])
+    .factory('playerFactory', [function() {
+        var o = {
+            player:{wins:0,losses:0,name:'RPSHero'}
+        };
+        return o;
+    }])
     .controller('MainCtrl', [
         '$scope',
         'gameFactory',
-        function($scope, gameFactory){
+        'playerFactory',
+        function($scope, gameFactory, playerFactory){
             $scope.games = gameFactory.games;
+            $scope.player = playerFactory.player;
         }
     ])
     .controller('GameCtrl', [
         '$scope',
         '$stateParams',
         'gameFactory',
-        function($scope, $stateParams, gameFactory) {
-            $scope.game = gameFactory.games[$stateParams.game];
-            $scope.computer = {pick:getRandomInt(3),hand:''};
-            
-
+        'playerFactory',
+        function($scope, $stateParams, gameFactory, playerFactory) {
+            $scope.game = gameFactory.games[$stateParams.id];
+            $scope.player = playerFactory.player;
+            $scope.computer = {pick:getRandomInt(3),hand:gameFactory.games[$stateParams.id].hand};
+            $scope.result = findwinner(game.id,computer.pick);
+            if ($scope.result == 'Player Lose') {
+                player.losses++;
+            } else if ($scope.result == 'Player Wins!') {
+                player.wins++;
+            }
         }
     ])
 
     function getRandomInt(max){
         return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function findWinner(player,comp) {
+        if(player == comp) {
+            return 'Draw';
+        }
+        if (player == 0) {
+            if (comp == 1) {
+                return 'Player Lose';
+            } else {
+                return 'Player Win!';
+            }
+        }
+        if (player == 1) {
+            if (comp==2) {
+                return 'Player Lose';
+            } else {
+                return 'Player Win!';
+            }
+        }
+        if (comp==0) {
+            return 'Player Lose';
+        } else {
+            return 'Player Win!';
+        }
+
     }
