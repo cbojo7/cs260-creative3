@@ -9,8 +9,8 @@ angular.module('RPS', ['ui.router'])
             templateUrl: '/home.html',
             controller: 'MainCtrl'
             })
-            .state('game/{id}', {
-            url: '/game',
+            .state('game', {
+            url: '/game/{id}',
             templateUrl: '/game.html',
             controller: 'GameCtrl'
             });
