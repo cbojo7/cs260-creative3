@@ -14,18 +14,18 @@
             <div class="col-md-3">
                 <img src="images/Icon.png">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
                 <h1>RPS Hero</h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <ui-view></ui-view>
+            <ui-view></ui-view>
             </div>
         </div>
     </div>
     
     <script type="text/ng-template" id="/home.html">
+        <div class="col-md-3"></div>
+        <div class="row">
+        <div class="col-md-12">
         <div class="container">
             <h2>Select move:</h2>
             <div class="row selectionBox">
@@ -37,13 +37,24 @@
     </script>
 
     <script type="text/ng-template" id="/game.html">
+        <div class="col-md-2">
+            Wins: {{player.wins}}
+            Losses: {{player.losses}}
+        </div>
+        <div class="col-md-1">
+            <a href=#!/home/>Home</a>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
         <div class="container">
             <div class="row gameBox">
                 <div class="col-md-12">
-                    {{result}}
-                    {{game.id}}
-                    <img ng-class="'hand-rotate': game.name != 'scissor'" ng-src={{game.hand}}>
-                    <img ng-class="'hand-rotate': game.name != 'scissor'" class="hand-flip" ng-src={{computer.hand}}
+                    <div class="row">
+                        <div class="col-"
+                    <h2>{{result}}</h2>
+
+                    <img ng-class="{'hand-rotate': game.name !== 'scissors'}" ng-src={{game.hand}}>
+                    <img ng-class="{'hand-rotate': game.name !== 'scissors', 'hand-flip': true}" ng-src={{computer.hand}}>
                 </div>
             </div>
         </div>
