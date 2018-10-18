@@ -50,12 +50,12 @@ angular.module('RPS', ['ui.router'])
         function($scope, $stateParams, gameFactory, playerFactory) {
             $scope.game = gameFactory.games[$stateParams.id];
             $scope.player = playerFactory.player;
-            $scope.computer = {pick:getRandomInt(3),hand:gameFactory.games[$stateParams.id].hand};
-            $scope.result = findwinner(game.id,computer.pick);
+            $scope.computer = {pick:getRandomInt(3),hand:gameFactory.games[$scope.computer.pick].hand};
+            $scope.result = findWinner($scope.game.id,$scope.computer.pick);
             if ($scope.result == 'Player Lose') {
-                player.losses++;
+                $scope.player.losses++;
             } else if ($scope.result == 'Player Wins!') {
-                player.wins++;
+                $scope.player.wins++;
             }
         }
     ])
