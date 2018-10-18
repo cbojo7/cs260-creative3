@@ -42,8 +42,8 @@
                 <div class="col-md-12">
                     {{result}}
                     {{game.id}}
-                    <img ng-src={{game.hand}}>
-                    <img ng-src={{computer.hand}}
+                    <img ng-class="'hand-rotate': game.name != 'scissor'" ng-src={{game.hand}}>
+                    <img ng-class="'hand-rotate': game.name != 'scissor'" class="hand-flip" ng-src={{computer.hand}}
                 </div>
             </div>
         </div>
